@@ -571,6 +571,146 @@
             50% { transform: translateX(-20%); }
         }
 
+        .project-preview-social {
+            background: linear-gradient(135deg, #1a1430 0%, #1c1640 50%, #241a52 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-mockup {
+            width: 78%;
+            height: 168px;
+            background: #16161f;
+            border-radius: 10px;
+            border: 1px solid #2a2a3e;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-topbar {
+            height: 30px;
+            background: #1f1f2e;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 7px;
+            border-bottom: 1px solid #2a2a3e;
+        }
+
+        .social-logo {
+            width: 16px;
+            height: 16px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+        }
+
+        .social-title {
+            width: 46px;
+            height: 8px;
+            border-radius: 4px;
+            background: #33334a;
+        }
+
+        .social-live {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 8px;
+            color: #28c840;
+            letter-spacing: 0.5px;
+        }
+
+        .social-live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #28c840;
+            box-shadow: 0 0 8px #28c840;
+            animation: livePulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .social-feed {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .social-post {
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            animation: postIn 4s ease-in-out infinite;
+        }
+
+        .social-post:nth-child(2) { animation-delay: 1.3s; }
+        .social-post:nth-child(3) { animation-delay: 2.6s; }
+
+        @keyframes postIn {
+            0% { opacity: 0; transform: translateY(8px); }
+            12%, 80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .social-avatar {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+        }
+
+        .social-post:nth-child(2) .social-avatar { background: linear-gradient(135deg, #ff8c5c, #ff5f9e); }
+        .social-post:nth-child(3) .social-avatar { background: linear-gradient(135deg, #28c840, #4f8fff); }
+
+        .social-bubble {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .social-name {
+            width: 40%;
+            height: 6px;
+            border-radius: 3px;
+            background: #3a3a52;
+        }
+
+        .social-line {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #262638;
+        }
+
+        .social-line.short { width: 70%; }
+
+        .social-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 2px;
+        }
+
+        .social-heart, .social-comment {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+
+        .social-heart { background: #ff5f9e; }
+        .social-comment { background: #33334a; border-radius: 2px; }
+
         .project-info {
             padding: 1.75rem;
         }
@@ -1020,6 +1160,71 @@
     </div>
 
     <div class="projects-grid">
+        <!-- BestiZ Social Network -->
+        <div class="project-card fade-in">
+            <div class="project-preview project-preview-social">
+                <div class="social-mockup">
+                    <div class="social-topbar">
+                        <div class="social-logo"></div>
+                        <div class="social-title"></div>
+                        <div class="social-live"><span class="social-live-dot"></span>LIVE</div>
+                    </div>
+                    <div class="social-feed">
+                        <div class="social-post">
+                            <div class="social-avatar"></div>
+                            <div class="social-bubble">
+                                <div class="social-name"></div>
+                                <div class="social-line"></div>
+                                <div class="social-actions"><div class="social-heart"></div><div class="social-comment"></div></div>
+                            </div>
+                        </div>
+                        <div class="social-post">
+                            <div class="social-avatar"></div>
+                            <div class="social-bubble">
+                                <div class="social-name"></div>
+                                <div class="social-line short"></div>
+                                <div class="social-actions"><div class="social-heart"></div><div class="social-comment"></div></div>
+                            </div>
+                        </div>
+                        <div class="social-post">
+                            <div class="social-avatar"></div>
+                            <div class="social-bubble">
+                                <div class="social-name"></div>
+                                <div class="social-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag alt">TypeScript</span>
+                    <span class="tech-tag warm">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag alt">Socket.IO</span>
+                    <span class="tech-tag warm">Docker</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+                <h3 class="project-name">BestiZ — Real-Time Social Network</h3>
+                <p class="project-desc">
+                    A full-stack social network with personalized feeds, a friends-only social graph, and privacy-aware posts — backed by a React/TypeScript client and a layered Node.js/Express + PostgreSQL server, with live updates over WebSockets, all containerized with Docker Compose.
+                </p>
+                <ul class="project-features">
+                    <li>Personalized feed with a friends-only social graph and privacy rules</li>
+                    <li>JWT authentication with separate access & refresh tokens</li>
+                    <li>Real-time updates (posts, friend requests) via Socket.IO</li>
+                    <li>Layered backend architecture, containerized with Docker Compose</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/AlmogMeirov/BestiZ" target="_blank" class="project-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View Source
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Mail System -->
         <div class="project-card fade-in">
             <div class="project-preview project-preview-mail">

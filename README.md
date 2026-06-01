@@ -11,5 +11,6 @@ Built as a single-page website with HTML, CSS, and JavaScript.
 
 ## Featured Projects
 
+- **BestiZ** — Real-time full-stack social network (React/TypeScript, Node.js/Express, PostgreSQL, Socket.IO, Docker)
 - **FooMail** — Full-stack Gmail-style mail client (React, Android, Node.js, C++, Docker)
 - **Arkanoid Game** — Classic breakout game engine built in Java with OOP design patterns
